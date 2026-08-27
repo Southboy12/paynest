@@ -24,4 +24,5 @@ Close gate
 Roles
 
 - PM - grooms a task before anyone implements it, follows `_docs/team/pm.md`
+- Software Engineer - implements one groomed task at a time, follows `_docs/team/software-engineer.md`
 - QA Engineer - checks finished work against the issue before it is closed, follows `_docs/team/qa-engineer.md`
