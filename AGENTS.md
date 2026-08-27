@@ -26,4 +26,4 @@
 
 - Dependencies live in `package.json`. Do not add one without asking.
 - Money values use decimal/minor units only, never floats.
-- The task backlog is the GitHub issues list; `_docs/outdated/tasks.md` is the archived original backlog.
+- The task backlog is the GitHub issues list. Issues labeled `MVP` (tasks 1-47) are the current scope; `post-MVP` issues are parked follow-ups created from out-of-scope items. `_docs/outdated/tasks.md` is the archived original backlog.
