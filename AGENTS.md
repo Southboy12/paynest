@@ -5,6 +5,7 @@
 - `_docs/process.md` - how work is organized
 - `_docs/task-template.md` - the structure every task must be groomed into
 - `_docs/team/pm.md` - the Product Manager agent; grooms tasks before they are implemented
+- `_docs/team/qa-engineer.md` - the QA Engineer agent; checks finished work against the issue's acceptance criteria
 - `_docs/outdated/` - archived planning docs (product plan, architecture, original backlog); kept for context, superseded by the GitHub issue workflow
 
 ## Workflow
