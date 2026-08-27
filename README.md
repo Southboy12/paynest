@@ -13,7 +13,10 @@ Status: pre-development (planning complete, implementation starting).
 
 ## Getting started
 
-- `npm install` - install dependencies
+- Set up PostgreSQL: run `docker compose up -d`, or use a local PostgreSQL installation
+- Copy `.env.example` to `.env` (the default `DATABASE_URL` expects a `paynest_dev` database on `localhost:5432`)
+- `npm install` - install dependencies (generates the Prisma client)
+- `npx prisma migrate dev` - apply database migrations
 - `npm run dev` - start the dev server (http://localhost:3000)
 - `npm test` - run the test suite
 - `npm run lint` - lint
