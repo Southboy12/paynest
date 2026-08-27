@@ -4,7 +4,7 @@
 
 **Date:** 27 August 2026  
 **Status:** Product discovery / brainstorming  
-**Technical stack:** Intentionally deferred until later
+**Technical stack:** Next.js full-stack (TypeScript), chosen 27 August 2026
 
 ---
 
@@ -1339,8 +1339,31 @@ Before choosing technologies or writing code, the next product discovery work sh
 
 **Product scope:** Well defined  
 **MVP direction:** Confirmed  
-**Technical stack:** Not yet decided  
+**Technical stack:** Confirmed — Option 3: Next.js full-stack (App Router) + React + TypeScript + PostgreSQL  
 **Next focus:** Product screens, workflows, entities, payroll rules, and edge cases
+
+---
+
+# 67. Technology Decision (27 August 2026)
+
+Selected stack: **Next.js 15 full-stack (App Router) + React 19 + TypeScript**.
+
+Concrete working set agreed for implementation:
+
+- **Framework/UI:** Next.js App Router, React Server Components, Tailwind CSS, shadcn/ui
+- **ORM/Database:** Prisma + PostgreSQL (NUMERIC for money, JSONB for audit snapshots and rule versioning)
+- **Auth/RBAC:** better-auth or Auth.js + permission middleware with `company_id` scoping from day one
+- **Background jobs:** Redis + BullMQ for email sending, retries, and notifications
+- **Email:** nodemailer behind a driver abstraction (managed transactional provider default, SMTP later)
+- **Excel:** exceljs for templates and fail-safe import validation
+- **PDF:** Playwright/Chromium HTML→PDF rendering, qpdf post-processing for password protection
+- **Money handling:** Decimal/minor units only, never floats
+
+Known trade-offs accepted with this choice:
+
+- Auth, RBAC, and audit trail are assembled from libraries rather than provided by a batteries-included framework.
+- Headless-Chromium PDF generation must be self-hosted; the app should be deployed to a VPS/container, not a serverless platform with execution limits.
+- Strict discipline is required to avoid float arithmetic for money values.
 
 ---
 
