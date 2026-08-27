@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PayNest",
+  title: {
+    default: "PayNest",
+    template: "%s | PayNest",
+  },
   description: "Payroll and payslip management for Nigerian companies",
 };
 
