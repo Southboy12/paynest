@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { MobileNav } from "@/components/mobile-nav";
 import { NavLinks } from "@/components/nav-links";
+import { SignOutButton } from "@/components/sign-out-button";
 
 export default function AppLayout({
   children,
@@ -20,6 +21,9 @@ export default function AppLayout({
         <header className="sticky top-0 z-40 flex h-14 items-center gap-3 border-b bg-background px-4">
           <MobileNav />
           <span className="font-semibold md:hidden">PayNest</span>
+          <div className="ml-auto">
+            <SignOutButton />
+          </div>
         </header>
         <main className="flex-1 p-4 md:p-6">{children}</main>
       </div>
