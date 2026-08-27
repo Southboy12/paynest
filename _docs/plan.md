@@ -1,4 +1,4 @@
-# Nigerian Payroll & Payslip Management Platform
+# PayNest — Nigerian Payroll & Payslip Management Platform
 
 ## Product Discovery & Brainstorming Scope
 

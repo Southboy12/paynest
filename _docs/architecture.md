@@ -1,4 +1,4 @@
-# Architecture — Nigerian Payroll & Payslip Platform (MVP)
+# Architecture — PayNest (MVP)
 
 Companion to `_docs/plan.md` (product) and `_docs/tasks.md` (backlog).
 Selected stack: **Next.js 15 full-stack (App Router) + React 19 + TypeScript**, per plan §67.

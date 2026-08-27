@@ -1,6 +1,6 @@
-# Nigerian Payroll & Payslip Management Platform
+# PayNest
 
-A professional payroll and payslip management platform for Nigerian companies: employee management, salary structures, payroll runs with PAYE/Pension/NHF calculations, branded PDF payslips, and email delivery with a full audit trail.
+PayNest — a professional payroll and payslip management platform for Nigerian companies: employee management, salary structures, payroll runs with PAYE/Pension/NHF calculations, branded PDF payslips, and email delivery with a full audit trail.
 
 - Product plan: [`_docs/plan.md`](_docs/plan.md)
 - Task backlog: [`_docs/tasks.md`](_docs/tasks.md) (mirrored in GitHub Issues)

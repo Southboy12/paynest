@@ -1,4 +1,4 @@
-# Backlog — Nigerian Payroll & Payslip Platform (MVP)
+# Backlog — PayNest (MVP)
 
 Stack: Next.js 15 (App Router) + React + TypeScript, Tailwind + shadcn/ui, Prisma + PostgreSQL, Redis + BullMQ, exceljs, Playwright/Chromium for PDF, qpdf for encryption.
 
