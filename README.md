@@ -17,6 +17,8 @@ Status: pre-development (planning complete, implementation starting).
 - Copy `.env.example` to `.env` (the default `DATABASE_URL` expects a `paynest_dev` database on `localhost:5432`)
 - `npm install` - install dependencies (generates the Prisma client)
 - `npx prisma migrate dev` - apply database migrations
+- Add `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD` to your `.env` — credentials for the first super admin (keep them secret, never commit real values)
+- `npx prisma db seed` - create the first super_admin user from those env vars (idempotent: re-running it neither duplicates the user nor errors; fails with a clear message if the env vars are missing)
 - `npm run dev` - start the dev server (http://localhost:3000)
 - `npm test` - run the test suite
 - `npm run lint` - lint
