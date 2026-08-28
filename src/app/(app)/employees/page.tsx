@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 
+import { EmployeesList } from "@/components/employees-list";
+
 export const metadata: Metadata = {
   title: "Employees",
+  description:
+    "Search, filter, and manage employee records and their profiles.",
 };
 
 export default function EmployeesPage() {
-  return (
-    <section className="space-y-1">
-      <h1 className="text-2xl font-semibold tracking-tight">Employees</h1>
-      <p className="text-muted-foreground">
-        Manage employee records and profiles.
-      </p>
-    </section>
-  );
+  return <EmployeesList />;
 }
