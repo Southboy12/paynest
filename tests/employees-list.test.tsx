@@ -9,6 +9,11 @@ vi.mock("sonner", () => ({
   }),
 }));
 
+const routerPush = vi.fn();
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: routerPush }),
+}));
+
 import { EmployeesList } from "@/components/employees-list";
 
 function searchEmployees(term: string) {
@@ -134,5 +139,16 @@ describe("employees list", () => {
     expect(
       screen.getByRole("menuitem", { name: "Edit" }),
     ).toBeInTheDocument();
+  });
+
+  test("edit action navigates to the edit route", () => {
+    render(<EmployeesList />);
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Actions for Adaeze Okafor" }),
+    );
+    fireEvent.click(screen.getByRole("menuitem", { name: "Edit" }));
+
+    expect(routerPush).toHaveBeenCalledWith("/employees/emp-001/edit");
   });
 });

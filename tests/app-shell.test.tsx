@@ -3,6 +3,7 @@ import { beforeEach, expect, test, vi, describe } from "vitest";
 
 vi.mock("next/navigation", () => ({
   usePathname: vi.fn(() => "/"),
+  useRouter: () => ({ push: vi.fn() }),
 }));
 
 vi.mock("@/lib/auth-client", () => ({

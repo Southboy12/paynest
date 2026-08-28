@@ -24,21 +24,37 @@ type FormErrors = {
 const selectClass =
   "h-10 cursor-pointer rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50";
 
-export function EmployeeForm({ mode = "new" }: { mode?: "new" | "edit" }) {
+export type EmployeeFormValues = {
+  fullName: string;
+  email: string;
+  phone: string;
+  department: string;
+  jobTitle: string;
+  hireDate: string;
+  status: string;
+};
+
+export function EmployeeForm({
+  mode = "new",
+  initial,
+}: {
+  mode?: "new" | "edit";
+  initial?: Partial<EmployeeFormValues>;
+}) {
   const router = useRouter();
-  const [values, setValues] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    department: "",
-    jobTitle: "",
-    hireDate: "",
-    status: "Active",
+  const [values, setValues] = useState<EmployeeFormValues>({
+    fullName: initial?.fullName ?? "",
+    email: initial?.email ?? "",
+    phone: initial?.phone ?? "",
+    department: initial?.department ?? "",
+    jobTitle: initial?.jobTitle ?? "",
+    hireDate: initial?.hireDate ?? "",
+    status: initial?.status ?? "Active",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [saving, setSaving] = useState(false);
 
-  function setValue(key: keyof typeof values, value: string) {
+  function setValue(key: keyof EmployeeFormValues, value: string) {
     setValues((current) => ({ ...current, [key]: value }));
   }
 

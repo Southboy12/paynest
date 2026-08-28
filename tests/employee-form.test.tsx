@@ -119,4 +119,34 @@ describe("new employee form", () => {
     ).toBeInTheDocument();
     expect(screen.getByLabelText("Status")).toBeInTheDocument();
   });
+
+  test("prefills the form from the initial values when editing", () => {
+    render(
+      <EmployeeForm
+        mode="edit"
+        initial={{
+          fullName: "Tunde Bakare",
+          email: "tunde.bakare@paynest.local",
+          phone: "+234 806 444 5566",
+          department: "Operations",
+          jobTitle: "Operations Manager",
+          hireDate: "2019-11-04",
+          status: "On Leave",
+        }}
+      />,
+    );
+
+    expect(
+      screen.getByLabelText<HTMLInputElement>("Full name").value,
+    ).toBe("Tunde Bakare");
+    expect(
+      screen.getByLabelText<HTMLInputElement>("Email").value,
+    ).toBe("tunde.bakare@paynest.local");
+    expect(
+      screen.getByLabelText<HTMLSelectElement>("Department").value,
+    ).toBe("Operations");
+    expect(
+      screen.getByLabelText<HTMLSelectElement>("Status").value,
+    ).toBe("On Leave");
+  });
 });

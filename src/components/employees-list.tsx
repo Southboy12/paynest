@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { MoreHorizontal, Plus, Search, UserX } from "lucide-react";
 import { toast } from "sonner";
@@ -38,6 +39,7 @@ const selectClass =
   "h-10 cursor-pointer rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50";
 
 export function EmployeesList() {
+  const router = useRouter();
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState(ALL);
   const [jobTitle, setJobTitle] = useState(ALL);
@@ -292,8 +294,8 @@ export function EmployeesList() {
                                   role="menuitem"
                                   onClick={() => {
                                     setOpenMenu(null);
-                                    toast(
-                                      "Editing an employee is not implemented yet",
+                                    router.push(
+                                      `/employees/${employee.id}/edit`,
                                     );
                                   }}
                                   className="flex w-full rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-accent"
