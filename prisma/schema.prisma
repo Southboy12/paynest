@@ -14,13 +14,21 @@ model Company {
   updatedAt DateTime @updatedAt
 }
 
+enum UserRole {
+  super_admin
+  hr_admin
+  payroll_officer
+  hr_officer
+  viewer
+}
+
 model User {
   id            String   @id @default(cuid())
   email         String   @unique
   name          String
   emailVerified Boolean  @default(false)
   image         String?
-  role          String   @default("hr_admin")
+  role          UserRole @default(hr_admin)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
