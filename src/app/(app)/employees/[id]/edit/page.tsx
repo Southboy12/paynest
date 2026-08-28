@@ -20,5 +20,18 @@ export default async function EditEmployeePage({
     notFound();
   }
 
-  return <EmployeeForm mode="edit" initial={employee} />;
+  return (
+    <EmployeeForm
+      mode="edit"
+      initial={{
+        fullName: employee.name,
+        email: employee.email,
+        phone: employee.phone,
+        department: employee.department,
+        jobTitle: employee.jobTitle,
+        hireDate: employee.hireDate,
+        status: employee.status,
+      }}
+    />
+  );
 }
