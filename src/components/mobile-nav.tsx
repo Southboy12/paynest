@@ -26,10 +26,15 @@ export function MobileNav({ className }: { className?: string }) {
             <PanelLeft aria-hidden />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-64 p-0 sm:max-w-64">
-          <SheetHeader className="border-b text-left">
-            <SheetTitle>PayNest</SheetTitle>
-            <SheetDescription>Navigate between modules.</SheetDescription>
+        <SheetContent
+          side="left"
+          className="w-64 bg-backdrop p-0 text-backdrop-foreground sm:max-w-64"
+        >
+          <SheetHeader className="border-b border-white/10 text-left">
+            <SheetTitle className="text-white">PayNest</SheetTitle>
+            <SheetDescription className="text-slate-400">
+              Navigate between modules.
+            </SheetDescription>
           </SheetHeader>
           <NavLinks className="p-3" onNavigate={() => setOpen(false)} />
         </SheetContent>

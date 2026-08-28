@@ -5,6 +5,11 @@ vi.mock("next/navigation", () => ({
   usePathname: vi.fn(() => "/"),
 }));
 
+vi.mock("@/lib/auth-client", () => ({
+  useSession: () => ({ data: undefined, isPending: false }),
+  signOut: vi.fn(),
+}));
+
 import { usePathname } from "next/navigation";
 
 import AppLayout from "@/app/(app)/layout";
