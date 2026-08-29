@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 
+import { PayrollRunsList } from "@/components/payroll-runs-list";
+
 export const metadata: Metadata = {
-  title: "Payroll",
+  title: "Payroll runs",
+  description:
+    "Create and manage payroll runs for each pay period.",
 };
 
 export default function PayrollPage() {
-  return (
-    <section className="space-y-1">
-      <h1 className="text-2xl font-semibold tracking-tight">Payroll</h1>
-      <p className="text-muted-foreground">
-        Create, review, and process payroll runs.
-      </p>
-    </section>
-  );
+  return <PayrollRunsList />;
 }

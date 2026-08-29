@@ -33,7 +33,7 @@ beforeEach(() => {
 const MODULE_PAGES = [
   { name: "Dashboard", Page: DashboardPage },
   { name: "Employees", Page: EmployeesPage },
-  { name: "Payroll", Page: PayrollPage },
+  { name: "Payroll runs", Page: PayrollPage },
   { name: "Payslips", Page: PayslipsPage },
   { name: "Settings", Page: SettingsPage },
   { name: "Audit Log", Page: AuditPage },
