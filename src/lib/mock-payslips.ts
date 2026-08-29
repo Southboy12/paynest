@@ -1,4 +1,5 @@
 import { MOCK_EMPLOYEES } from "@/lib/mock-employees";
+import { getMockRunEntries } from "@/lib/mock-payroll-runs";
 
 export type MockPayslipStatus = "Sent" | "Pending" | "Failed";
 
@@ -36,4 +37,25 @@ export function getMockPayslips(employeeId: string): MockPayslip[] {
     netKobo: row.netKobo,
     status: row.status,
   }));
+}
+
+export function getMockPayslipList(): MockPayslip[] {
+  const entries = getMockRunEntries("run-2026-08");
+
+  return MOCK_EMPLOYEES.map((employee, index) => {
+    const status: MockPayslipStatus =
+      index === MOCK_EMPLOYEES.length - 1
+        ? "Failed"
+        : index === 2
+          ? "Pending"
+          : "Sent";
+    return {
+      id: `${employee.id}-payslip`,
+      employeeId: employee.id,
+      reference: `PS-2026-08-${String(index + 1).padStart(4, "0")}`,
+      period: "August 2026",
+      netKobo: entries[index]?.netKobo ?? 0,
+      status,
+    };
+  });
 }
