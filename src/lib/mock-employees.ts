@@ -10,6 +10,9 @@ export type MockEmployee = {
   jobTitle: string;
   hireDate: string;
   status: MockEmployeeStatus;
+  bankAccountName: string;
+  bankName: string;
+  accountNumber: string;
 };
 
 export const MOCK_EMPLOYEES: MockEmployee[] = [
@@ -23,6 +26,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Chief Financial Officer",
     hireDate: "2018-04-02",
     status: "Active",
+    bankAccountName: "Adaeze Okafor",
+    bankName: "GTBank",
+    accountNumber: "0123456789",
   },
   {
     id: "emp-002",
@@ -34,6 +40,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Senior Backend Engineer",
     hireDate: "2021-07-19",
     status: "Active",
+    bankAccountName: "Chinedu Adeyemi",
+    bankName: "Zenith Bank",
+    accountNumber: "2039485761",
   },
   {
     id: "emp-003",
@@ -45,6 +54,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Accountant",
     hireDate: "2022-01-10",
     status: "Active",
+    bankAccountName: "Fatima Bello",
+    bankName: "Access Bank",
+    accountNumber: "3048572619",
   },
   {
     id: "emp-004",
@@ -56,6 +68,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Operations Manager",
     hireDate: "2019-11-04",
     status: "On Leave",
+    bankAccountName: "Tunde Bakare",
+    bankName: "UBA",
+    accountNumber: "4059683721",
   },
   {
     id: "emp-005",
@@ -67,6 +82,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Frontend Engineer",
     hireDate: "2023-03-13",
     status: "Active",
+    bankAccountName: "Ngozi Eze",
+    bankName: "First Bank",
+    accountNumber: "5061738294",
   },
   {
     id: "emp-006",
@@ -78,6 +96,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "HR Officer",
     hireDate: "2020-09-21",
     status: "Active",
+    bankAccountName: "Ibrahim Musa",
+    bankName: "GTBank",
+    accountNumber: "6072849153",
   },
   {
     id: "emp-007",
@@ -89,6 +110,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Payroll Analyst",
     hireDate: "2022-06-27",
     status: "Active",
+    bankAccountName: "Amara Osei",
+    bankName: "Zenith Bank",
+    accountNumber: "7083951426",
   },
   {
     id: "emp-008",
@@ -100,6 +124,9 @@ export const MOCK_EMPLOYEES: MockEmployee[] = [
     jobTitle: "Logistics Coordinator",
     hireDate: "2017-05-15",
     status: "Terminated",
+    bankAccountName: "Emeka Obi",
+    bankName: "Union Bank",
+    accountNumber: "8094062751",
   },
 ];
 

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { MoreHorizontal, Plus, Search, UserX } from "lucide-react";
-import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -281,9 +280,7 @@ export function EmployeesList() {
                                   role="menuitem"
                                   onClick={() => {
                                     setOpenMenu(null);
-                                    toast(
-                                      "Employee profile screen is not implemented yet",
-                                    );
+                                    router.push(`/employees/${employee.id}`);
                                   }}
                                   className="flex w-full rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-accent"
                                 >

@@ -151,4 +151,15 @@ describe("employees list", () => {
 
     expect(routerPush).toHaveBeenCalledWith("/employees/emp-001/edit");
   });
+
+  test("view profile action navigates to the employee detail page", () => {
+    render(<EmployeesList />);
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Actions for Adaeze Okafor" }),
+    );
+    fireEvent.click(screen.getByRole("menuitem", { name: "View profile" }));
+
+    expect(routerPush).toHaveBeenCalledWith("/employees/emp-001");
+  });
 });
